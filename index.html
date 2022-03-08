@@ -1,28 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Advice generator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    :root {
+      /* Primary */
+      --Light-Cyan: hsl(193, 38%, 86%);
+      --Neon-Green: hsl(150, 100%, 66%);
+      /* Neutral */
+      --Grayish-Blue: hsl(217, 19%, 38%);
+      --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+      --Dark-Blue: hsl(218, 23%, 16%);
+
+    }
+
+    * {
+      margin: 0;
+      padding-left: 0;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: var(--Dark-Blue);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 320px;
+      width: 90%;
+      background-color: var(--Dark-Grayish-Blue);
+      border-radius: 10px;
+      max-width: 500px;
+    }
+
+
+    h1 {
+      position: absolute;
+      top: 40px;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: var(--Neon-Green);
+    }
+
+    q {
+      color: var(--Light-Cyan);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .circle {
+      position: absolute;
+      bottom: -30px;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      background-color: var(--Neon-Green);
+      border-radius: 50%;
+    }
+    .circle:active{
+      box-shadow: 0px 0px 40px 1px var(--Neon-Green);
+    }
+
+    .pattern-divider-mobile {
+      margin-top: 10px;
+      position: absolute;
+      bottom: 70px;
+    }
+    .icon-dice{
+      position: absolute;
+      top: 18px;
+      left: 18px;
+    }
   </style>
 </head>
+
 <body>
-
-  Advice #<!-- Advice ID goes here -->
-
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
+  <div class="box">
+    <h1>Advice #</h1>
+    <!-- Advice ID goes here -->
+    <q>
+      <!-- Advice text goes here -->
+    </q>
+    <picture class="pattern-divider-mobile">
+      <source media="(min-width:768px)" srcset="./images/pattern-divider-desktop.svg"  alt="pattern-divider-desktop">
+      <source media="(min-width:375px)" srcset="./images/pattern-divider-mobile.svg"  alt="pattern-divider-mobile">
+      <img src="./images/pattern-divider-mobile.svg" alt="pattern-divider-desktop" style="width: auto;">
+    </picture>
+   
+    <div class="circle">
+      <img src="./images/icon-dice.svg" alt="icon-dice" class="icon-dice">
+    </div>
+  </div>
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
+
 </html>
